@@ -1,0 +1,51 @@
+/ Original format: http://getbootstrap.com/css/#forms
+/ Translated from HTML to HAML with http://html2haml.herokuapp.com/
+/ This is the new contra dance form
+
+.container
+    .row
+        .col-md-10
+        %h1{:style => "text-align: center"} New Contra Form
+    -if @contra.errors.any?
+        .row
+            .alert.alert-danger.col-md-10
+                %h4 #{pluralize(@contra.errors.count, "error")} prohibited this category from being saved:
+                %ul
+                - @contra.errors.full_messages.each do |msg|
+                    %li=     msg
+    .row
+        = form_for @contra, :url => (@contra.new_record? ?contras_path : contra_url(@contra)) do |f|
+        
+            .form-section.col-md-10
+                .row.top-buffer
+                    %form_group
+                        .col-md-2
+                            = f.label :title, "Title"
+                        .col-md-8
+                            = f.text_field :title, :class => "form-control", :required => true, placeholder: 'Title of dance'
+                .row-top-buffer
+                    %form_group
+                        .col-md-2
+                            = f.label :author, "Author"
+                        .col-md-8
+                            = f.text_field :author, :class => "form-control", :required => true, placeholder: 'Author of dance'
+                .row-top-buffer
+                    %p Must be of the format:
+                    %p (8) Ladies Chain
+                    %p (16) Partner Balance and Swing
+                    %form_group
+                        .col-md-2
+                            = f.label :a_part "A Part"
+                        .col-md-8
+                            = f.text_field :a_part, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
+                .row-top-buffer
+                    %form_group
+                        .col-md-2
+                            = f.label :b_part "B Part"
+                        .col-md-8
+                            = f.text_field :b_part, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
+                
+
+        
+        .col-md-2
+            %button.btn.btn-success{:type => "create", :confirm => "confirm"} Create

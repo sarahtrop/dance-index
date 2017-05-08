@@ -1,0 +1,9 @@
+# contra#index
+# Displays all dances
+.jumbotron#main-page-jumbotron
+    .container
+        %h1 All Dances
+    .container{:id => "all-contras"}
+        - @contras.each do |contra|
+            = render :partial => 'contra', :locals => { :contra => contra }
+    %hr
