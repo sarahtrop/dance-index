@@ -30,6 +30,12 @@ class ContraController < ApplicationController
         end
     end
     
+    def update
+    end
+    
+    def destroy
+    end
+    
     private
     def set_dance
         @contra = Contra.find params[:id]
