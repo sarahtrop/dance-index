@@ -15,6 +15,18 @@ class FormationController < ApplicationController
     
     def create
         @formation = Formation.new(formation_params)
+
+        respond_to do |format|
+            if @formation.save
+                format.html { redirect_to @formation, notice: 'Formation was successfully created.' }
+                format.json { render :show, status: :created, location: @formation }
+            else
+                format.html { render :new }
+                format.json { render json: @formation.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+
     end
     
     def update

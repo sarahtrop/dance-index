@@ -1,0 +1,20 @@
+.jumbotron#main-page-jumbotron
+    .container
+        %h1 All #{formation} Dances
+    .container{:id => "contra-by-formation"}
+      .row
+        %h1 Listing categories
+        .row
+            %table.table.table-striped
+                %thead
+                    %tr
+                        %th Formation Type
+                        %th
+                        %th
+                        %th
+
+                    %tbody
+                        - @formations.each do |formation|
+                            %tr
+                              %td= formation.name
+                              %td= link_to 'View', formation

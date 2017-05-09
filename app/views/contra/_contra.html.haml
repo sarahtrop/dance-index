@@ -2,10 +2,20 @@
     %h1
         = link_to contra, class: "contra-title", target: "_blank" do
             = contra.title
-        %h2 #{contra.title}
-        %h2 by #{contra.author}
-        %h1 #{contra.formation}
-        %h1 #{contra.progression}
-        %p #{contra.a_part}
-        %p #{contra.b_part}
+    %h2 by #{contra.author}
+    %h3 
+        = link_to Formation.find_by(contra.formation_id), class: "formation-title", target: "_blank" do
+            = Formation.find_by(contra.formation_id).name + ", "
+        = link_to Progression.find_by(contra.progression_id).name, class: "progression-title", target: "_blank" do
+            = Progression.find_by(contra.progression_id).name + " progression"
+    %p{:class => "part_title"} A1:
+    %p #{contra.a_1.gsub(/\n/, '<br />').html_safe}
+    %p{:class => "part_title"} A2:
+    %p #{contra.a_2.gsub(/\n/, '<br />').html_safe}
+    %p{:class => "part_title"} B1:
+    %p #{contra.b_1.gsub(/\n/, '<br />').html_safe}
+    %p{:class => "part_title"} B2:
+    %p #{contra.b_2.gsub(/\n/, '<br />').html_safe}
+    - if contra.notes != nil
+        %p{:class => "part-title"} Notes: 
         %p #{contra.notes}

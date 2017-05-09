@@ -1,6 +1,6 @@
 .jumbotron#main-page-jumbotron
     .container
-        %h1 All Dances
+        %h1 All #{progression} Progression Dances
     .container{:id => "all-contras"}
         - @contras.each do |contra|
             = render :partial => 'contra', :locals => { :contra => contra }

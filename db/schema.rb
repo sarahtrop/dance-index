@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510212433) do
+ActiveRecord::Schema.define(version: 20170510212438) do
 
   create_table "contras", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "title"
     t.string   "author"
     t.string   "notes"
@@ -23,18 +23,22 @@ ActiveRecord::Schema.define(version: 20170510212433) do
     t.string   "a_2"
     t.string   "b_1"
     t.string   "b_2"
+    t.integer  "formation_id"
+    t.integer  "progression_id"
   end
 
   create_table "formations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "type"
+    t.string   "name"
+    t.integer  "contra_id"
   end
 
   create_table "progressions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "type"
+    t.string   "name"
+    t.integer  "contra_id"
   end
 
 end

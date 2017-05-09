@@ -1,3 +1,3 @@
 class Formation < ActiveRecord::Base
-    belongs_to Contra
+    belongs_to :contra
 end

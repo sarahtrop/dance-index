@@ -36,15 +36,18 @@ class ContraController < ApplicationController
     def destroy
     end
     
-    private
-    def set_dance
-        @contra = Contra.find params[:id]
+    def get_formation
+       formation = Formation.find params[@contra.formation_id] 
     end
     
-    # Gets all the paramaters
+    def get_progression
+       progression = Progression.find params[@contra.progression_id] 
+    end
+    
+    private
     def contra_params
         the_params = params.require(:contra)
-                            .permit(:title, :author, :a_part, :b_part,
-                                    :formation_ids => [], :progression_ids => [])
+                            .permit(:title, :author, :a_1, :a_2, :b_1, :b_2,
+                                    :formation_id, :progression_id)
     end
 end
