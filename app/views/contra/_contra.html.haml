@@ -2,8 +2,10 @@
     %h1
         = link_to contra, class: "contra-title", target: "_blank" do
             = contra.title
-        %h2.title #{contra.title}
-        %h2.author by #{contra.author}
-        %p.a_part #{contra.a_part}
-        %p.b_part #{contra.b_part}
-        %p.notes #{contra.notes}
+        %h2 #{contra.title}
+        %h2 by #{contra.author}
+        %h1 #{contra.formation}
+        %h1 #{contra.progression}
+        %p #{contra.a_part}
+        %p #{contra.b_part}
+        %p #{contra.notes}

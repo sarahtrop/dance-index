@@ -44,6 +44,7 @@ class ContraController < ApplicationController
     # Gets all the paramaters
     def contra_params
         the_params = params.require(:contra)
-                            .permit(:title, :author, :a_part, :b_part)
+                            .permit(:title, :author, :a_part, :b_part,
+                                    :formation_ids => [], :progression_ids => [])
     end
 end

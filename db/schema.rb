@@ -11,34 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508212438) do
-
-  create_table "a_parts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "beats"
-    t.text     "moves"
-  end
-
-  create_table "b_parts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "beats"
-    t.text     "moves"
-  end
+ActiveRecord::Schema.define(version: 20170510212433) do
 
   create_table "contras", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "title"
     t.string   "author"
-    t.text     "a_part_beats"
-    t.text     "b_part_beats"
-    t.text     "a_part_figures"
-    t.text     "b_part_figures"
-    t.string   "a_part"
-    t.string   "b_part"
     t.string   "notes"
+    t.string   "a_1"
+    t.string   "a_2"
+    t.string   "b_1"
+    t.string   "b_2"
+  end
+
+  create_table "formations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "type"
+  end
+
+  create_table "progressions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "type"
   end
 
 end
