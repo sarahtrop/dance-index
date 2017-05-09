@@ -38,7 +38,7 @@
                 .row-top-buffer
                     %form_group
                         .col-md-2
-                            = f.label :progression, "Formation"
+                            = f.label :progression, "Progression"
                         .col-md-8
                             = f.collection_select :progression_id, Progression.order(:type), :id, :type
                     
@@ -48,17 +48,26 @@
                     %p (16) Partner Balance and Swing
                     %form_group
                         .col-md-2
-                            = f.label :a_part "A Part"
+                            = f.label :a_1 "A 1"
                         .col-md-8
-                            = f.text_field :a_part, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
+                            = f.text_field :a_1, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
+                    %form_group
+                        .col-md-2
+                            = f.label :a_2 "A 2"
+                        .col-md-8
+                            = f.text_field :a_2, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
+
                 .row-top-buffer
                     %form_group
                         .col-md-2
-                            = f.label :b_part "B Part"
+                            = f.label :b_1 "B 1"
                         .col-md-8
-                            = f.text_field :b_part, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
-                
+                            = f.text_field :b_1, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
+                    %form_group
+                        .col-md-2
+                            = f.label :b_2 "B 2"
+                        .col-md-8
+                            = f.text_field :b_2, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
 
-        
         .col-md-2
             %button.btn.btn-success{:type => "create", :confirm => "confirm"} Create
