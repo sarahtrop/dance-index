@@ -1,7 +1,18 @@
 .jumbotron#main-page-jumbotron
     .container
-        %h1 All #{progression} Progression Dances
-    .container{:id => "all-contras"}
-        - @contras.each do |contra|
-            = render :partial => 'contra', :locals => { :contra => contra }
-    %hr
+        %h1 Progressions
+    .container{:id => "contra-by-formation"}
+        .row
+            %h1 Listing progressions
+            .row
+                %table.table.table-striped
+                    %thead
+                        %tr
+                            %th Progression Type
+                            %th
+
+                        %tbody
+                            - @progressions.each do |progression|
+                                %tr
+                                    %td= progression.name
+                                    %td= link_to 'View', progression

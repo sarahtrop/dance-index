@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510212438) do
+ActiveRecord::Schema.define(version: 20170510212441) do
+
+  create_table "authors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "contra_id"
+  end
 
   create_table "contras", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "title"
-    t.string   "author"
     t.string   "notes"
     t.string   "a_1"
     t.string   "a_2"
@@ -25,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170510212438) do
     t.string   "b_2"
     t.integer  "formation_id"
     t.integer  "progression_id"
+    t.integer  "author_id"
   end
 
   create_table "formations", force: :cascade do |t|

@@ -2,7 +2,9 @@
     %h1
         = link_to contra, class: "contra-title", target: "_blank" do
             = contra.title
-    %h2 by #{contra.author}
+    %h2
+        = link_to Author.find_by(contra.formation_id), class: "author-title", target: "_blank" do
+            = "by " + Author.find_by(contra.formation_id).name
     %h3 
         = link_to Formation.find_by(contra.formation_id), class: "formation-title", target: "_blank" do
             = Formation.find_by(contra.formation_id).name + ", "

@@ -37,6 +37,6 @@ class ProgressionController < ApplicationController
     
     private
     def progression_params
-        params.require(:progression).permit(:type)
+        params.require(:progression).permit(:name)
     end
 end

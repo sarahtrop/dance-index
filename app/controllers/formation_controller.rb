@@ -4,7 +4,7 @@ class FormationController < ApplicationController
     end 
     
     def show
-        @contras = @formations.contras
+        @contras = Formation.find_by(params[:id])
     end
     
     def new
@@ -26,8 +26,6 @@ class FormationController < ApplicationController
             end
         end
     end
-
-    end
     
     def update
     end 
@@ -37,6 +35,6 @@ class FormationController < ApplicationController
     
     private
     def formation_params
-        params.require(:formation).permit(:type)
+        params.require(:formation).permit(:name)
     end
 end

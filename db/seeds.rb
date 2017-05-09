@@ -16,8 +16,12 @@ progressions = [
     {name: "Quintuple"}
 ]
 
+authors = [
+    {name: "Cary Ravitz"}
+]
+
 contra_dances = [
-    {title: "Between the Lines", author: "Cary Ravitz", formation: ['Improper'],
+    {title: "Between the Lines", author: ['Cary Ravitz'], formation: ['Improper'],
             progression: ['Double'], a_1: "(16) Neighbors balance and swing",
             a_2: "(4) Long lines go forward. \n (12) Ones swing in the middle and end facing down while twos back up and face up.",
             b_1: "(8) With new neighbors, ones split the twos to start a mirror do-si-do (gent 1 and lady 2 see-saw, gent 2 and lady 1 do-si-do) \n (8) Twos swing and end facing up.",
@@ -34,6 +38,11 @@ progressions.each do |p|
     Progression.create! (p)
 end
 
+# Populate database with authors
+authors.each do |a|
+    Author.create! (a)
+end
+
 # Populate database with dances
 contra_dances.each do |c|
     # links progression to contradance
@@ -43,6 +52,10 @@ contra_dances.each do |c|
    # links formation to contradance
    form_name = c[:formation]
    c[:formation] = Formation.find_by(name: form_name)
+   
+   # links author to contradance
+   author_name = c[:author]
+   c[:author] = Author.find_by(name: author_name)
    
    Contra.create! (c)
 end
