@@ -36,6 +36,27 @@ class ContraController < ApplicationController
     def destroy
     end
     
+    def favorite 
+        @contra = Contra.find(params[:id])
+        type = params[:type]
+        if type == "favorite"
+        # If favoriting a contra, adds to favorites list and notifies user
+        begin
+            current_user.favorites << @contra
+            redirect_to :back, notice: "You favorited #{@contra.name}"
+        rescue ActiveRecord::RecordInvalid => e # error catching for duplicate favorites
+            e.record.errors.details
+        end
+        elsif type == "unfavorite"
+        # If unfavoriting a contra, removes from favorites list and notifies user
+        current_user.favorites.delete(@contra)
+        redirect_to :back, notice: "Unfavorited #{@contra.name}"
+        else
+        # Type missing, nothing happens
+        redirect_to :back, notice: 'Nothing happened.'
+        end
+    end
+    
     private
     def contra_params
         the_params = params.require(:contra)

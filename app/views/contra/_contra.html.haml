@@ -17,3 +17,17 @@
     - if contra.notes != nil
         %p{:class => "part_title"} Notes: 
         %p #{contra.notes}
+        
+    - if current_user
+      .col-md-3
+        = button_to(favorite_contra_path(contra.id, type: "favorite"),
+                :class => 'btn btn-default noprint',
+                :method => 'put') do
+          %span.fa.fa-lg.fa-star
+          Favorite
+      .col-md-3
+        = button_to(favorite_contra_path(contra.id, type: "unfavorite"),
+                :class => 'btn btn-default noprint',
+                :method => 'put') do
+          %span.fa.fa-lg.fa-times
+          Unfavorite
