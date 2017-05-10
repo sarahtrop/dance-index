@@ -55,3 +55,5 @@ gem 'autoprefixer-rails'
 gem "haml"
 gem "haml-rails"
 gem 'font-awesome-sass', '~> 4.4.0'
+gem 'devise'
+gem 'devise_invitable'
