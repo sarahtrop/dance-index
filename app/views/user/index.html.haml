@@ -1,0 +1,11 @@
+.container{:class => "all-contra"}
+    %h1 My Favorite Resources
+.container{:style => 'padding_bottom:10px' }
+  %a.btn.btn-default{ :onclick => 'window.print(); return false;', :role => "button", :class => 'noprint' }
+    %span.fa.fa-print
+    Print Dance List &raquo;
+  %br
+.container
+  - current_user.favorites.each do |dance|
+    = render :partial => 'contra/contra', :locals => { :contra => contra }
+%hr
