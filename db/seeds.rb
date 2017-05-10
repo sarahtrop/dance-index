@@ -59,7 +59,21 @@ authors = [
     {name: "Kathy Anderson"},
     {name: "Walter Lenk"},
     {name: "Jonathan Southard"},
-    {name: "David Kaynor"}
+    {name: "David Kaynor"},
+    {name: "Tony Mates"},
+    {name: "Charlie Fenton"},
+    {name: "Erik Hoffman"},
+    {name: "Roger Diggle"},
+    {name: "Danner Claflin"},
+    {name: "Larry Jennings"},
+    {name: "Don Armstrong"},
+    {name: "Christine Hale"},
+    {name: "Amy Kahn"},
+    {name: "Sue Rosen"},
+    {name: "Rick Mohr"},
+    {name: "Isaac Banner"},
+    {name: "Allan Brozek"},
+    {name: "Linda Leslie"}
 ]
 
 contra_dances = [
@@ -123,6 +137,33 @@ contra_dances = [
     {title: "Mad About Dancing", author: ['Robert Cromartie'], formation: ['Improper'], progression: ['Single'], a_1: "Start in waves, N in R hand \n (4) Balance short waves \n (4) n allemande R 1/2 \n (4) Balance waves \n (4) G allemande once", a_2: "(16) N balance and swing", b_1: "(8) Circle L 3/4 \n (8) P swing", b_2: "(8) Circle L 3/4, melt to wave \n (4) Short waves balance up/down \n (4) walk to new waves"},
     {title: "Whim's Gym", author: ['Cary Ravitz'], formation: ['Improper'], progression: ['Single'], a_1: "(8) N dosido \n (8)N swing", a_2: "(8) R&L through \n (8) L allemande R 1 1/2", b_1: "(16) P balance and swing", b_2: "(7) Circle L 3/4 \n (3) N pull by R \n (3) P pull by L \n (3) N pull by R"},
     {title: "The Baby Rose", author: ['David Kaynor'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) Circle L 3/4 \n (8) P dosido", b_1: "(16) P balance and swing", b_2: "(8) L chain \n (8) Star L"},
+    {title: "Clueless in Seattle", author: ['Tony Mates'], formation: ['Improper'], progression: ['Single'], a_1: "(8) Square though (N by R) \n (8) N swing", a_2: "(8) Down the hall in a line of 4, turn as a couple \n (8) Come back, hand cast off", b_1: "(8) L allemande R 1 ½ \n (8) P swing", b_2: "(8) Circle L ¾ \n (8) Balance and pass through"},
+    {title: "Monday Night in Ballard", author: ['Mike Richardson'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) LL forward and back \n (8) L allemande R 1 1/2", b_1: "(16) P swing", b_2: "(8) G dosed \n (6) Circle L ¾ \n (2) Pull by along the line"},
+    {title: "20 Below", author: ['Bob Isaacs'], formation: ['Becket'], progression: ['Single'], a_1: "(8) Circle L ¾, melt to wave \n (8) Short waves balance, walk to new", a_2: "(4) Waves balance \n (12) N swing", b_1: "(8) G allemande L 1 ½ \n (8) P pass R for ½ hey", b_2: "(16) P balance and swing"},
+    {title: "Judah Jig", author: ['Charlie Fenton'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) Circle L ¾ \n (8) P swing", b_1: "(8) Circle L \n (8) Star R", b_2: "(8) L chain \n (8) Star L"},
+    {title: "Simplicity Swing", author: ['Becky Hill'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) Circle L 3/4 \n (8) P swing", b_1: "(8) LL forward and back \n (8) L chain", b_2: "(8) Star L \n (8) new N dosido"},
+    {title: "Missing Duck", author: ['Erik Hoffman'], formation: ['Becket'], progression: ['Single'], a_1: "(8) Circle L 3/4 and pass through \n (8) new L allemande L 1/2, P allemande R to long wave", a_2: "(16) Balance R/L, slide R. Balance L/R, slide L", b_1: "(16) L pass L for full hey", b_2: "(16) P balance and swing"},
+    {title: "Roll in the Hey", author: ['Roger Diggle'], formation: ['Improper'], progression: ['Single'], a_1: "(8) Circle L \n (8) N swing", a_2: "(8) Circle L 3/4 \n (8) P swing", b_1: "(8) LL forward and back \n (8) L chain", b_2: "(16) L pass R for full hey"},
+    {title: "The Rendezvous", author: ['Dan Pearl'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) LL forward and back \n (8) L dosido 1 1/2", b_1: "(16) P balance and swing", b_2: "(8) Circle L \n (8) Slide L, circle L 3/4"},
+    {title: "Trip to IHOP", author: ['Danner Claflin'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) L to wavy line center, balance and stay \n (8) G to center in wave, balance, stay", b_1: "(8) Gypsy star, G by L and L by R \n (8) P swing on G home", b_2: "(8) L chain \n (8) Star L to nex"},
+    {title: "Rory OMore", author: ['Larry Jennings'], formation: ['Proper'], progression: ['Single'], a_1: "(8) 1s pull by and go down outside 1 place \n (8) 1s half figure 8 around 2s, step to center to make a long wave in the center of the set", a_2: "(4) Balance wave \n (4) slide R \n (4) Balance wave \n (4) Slide L", b_1: "(16) 1s contra corners", b_2: "(16) 1s balance and swing and face up"},
+    {title: "Broken Sixpence", author: ['Don Armstrong'], formation: ['Improper'], progression: ['Single'], a_1: "(8) N dosido \n (8) L dosido", a_2: "(8) G dosido \n (8) 1s swing, face down", b_1: "(16) down the hall, turn alone, come back", b_2: "(8) L chain to P \n (8) L chain to N"},
+    {title: "Sure Thing", author: ['Chris Page'], formation: ['Improper'], progression: ['Single'], a_1: "(8) P 1/2 pousset, L push \n (8) N swing", a_2: "(8) G allemande L 1 1/2 \n (8) P pass R 1/2 hey", b_1: "(16) P balance and swing", b_2: "(8) L chain \n (8) Circle R once"},
+    {title: "Wignut Whirl", author: ['Allan Brozek'], formation: ['Becket'], progression: ['Single'], a_1: "(8) Down the hall in line \n (8) Turn as a couple and come back", a_2: "(8) Circle L 3/4, pass through \n (8) New N swing", b_1: "(8) G allemande L 1 1/2 \n (8) Butterfly whirl and star promenade P", b_2: "(8) L dosido \n (8) P swing, end facing down"},
+    {title: "Spring Fever", author: ['Tony Parkes'], formation: ['Improper'], progression: ['Single'], a_1: "(8) LL forward and back \n (8) N swing", a_2: "(8) G allemande 1 1/2 \n (8) P swing", b_1: "(8) Circle L once \n (8) Star L once", b_2: "(8) 1/2 promenade across \n (8) L chain"},
+    {title: "The Zombies of Sugar Hill", author: ['Gene Hubert'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(6) Circle L 1/2, slide L with neighbor \n (10) Circle L 3/4 with shadow, N cali twirl", b_1: "(16) P balance and swing", b_2: "(8) L chain to N \n (8) Star L"},
+    {title: "Down the Coast", author: ['Isaac Banner'], formation: ['Improper'], progression: ['Single'], a_1: "(8) Star L once, L drop out (hands across star) \n (8) G allemande L 1 1/2", a_2: "(16) P balance and swing", b_1: "(8) Revolving doors \n (8) N swing", b_2: "(8) Circle L once \n (4) L allemande R 3/4, catch L with next \n (4) L allemande L once"},
+    {title: "Butterbump", author: ['John Coffman'], formation: ['Improper'], progression: ['Single'], a_1: "Start in long wavy lines, G facing out \n (8) Balance, slide R \n (8) N allemande L once", a_2: "(8) L gypsy R \n (8) N swing", b_1: "(8) Circle L 3/4 \n (8) P swing", b_2: "(8) L chain \n (8) Star L to new waves, new N in R hand"},
+    {title: "Star Trick", author: ['Cary Ravitz'], formation: ['Improper'], progression: ['Single'], a_1: "(8) N allemande R 1 1/2 \n (8) Star R 3/4", a_2: "(16) L turn in, P gypsy/swing", b_1: "(8) Balance ring, petronella \n (8) Balance ring, petronella", b_2: "(8) Star L 3/4 \n (8) N allemande L 1 1/2"},
+    {title: "Jubilation Variation", author: ['Cary Ravitz'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) Circle L 3/4 \n (8) P swing", b_1: "(8) G 1/2 hey by L \n (8) P swing", b_2: "(8) R&L through \n (8) L chain"},
+    {title: "CJ's Delight", author: ['Amy Kahn'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) LL forward and back \n (8) L dosido 1 1/2", b_1: "(16) P gypsy and swing", b_2: "(8) P promenade 3/4 (1s below, 2s above) \n (8) Balance and california twirl"},
+    {title: "Hay in the Barn", author: ['Chart Guthrie'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) L chain to P \n (8) L lead 1/2 hey by R", b_1: "(16) P balance and swing", b_2: "(8) L chain \n (8) L lead by R 1/2 hey"},
+    {title: "Cranky Ingenuity", author: ['Bill Olsen'], formation: ['Improper'], progression: ['Single'], a_1: "(8) Circle L \n (8) As couples, dosido", a_2: "(8) N dosido \n (8) N swing", b_1: "(8) G allemande L 1 1/2 \n (8) P swing", b_2: "(8) Circle L 3/4 \n (4) Ring balance \n (4) P cali twirl"},
+    {title: "Old Time Elixir #2", author: ['Linda Leslie'], formation: ['Becket'], progression: ['Single'], a_1: "(8) [Slide L], circle L 3/4 \n (8) N swing", a_2: "(8) R&L through \n (8) L chain", b_1: "(8) Balance and petronella \n (8) Balance and petronella", b_2: "(16) P balance and swing"},
+    {title: "Ragged Teacher's Reel", author: ['Christine Hale'], formation: ['Improper'], progression: ['Single'], a_1: "(8) Star R (hands across) \n (4) G drop, L allemande R 1/2 \n (4) N courtesy turn", a_2: "(4) Circle L 3/4 \n (4) N rollaway across \n (8) P swing", b_1: "(8) G allemande L 1 1/2 \n (8) N swing", b_2: "(16) L lead full hey by R"},
+    {title: "Apples and Chocolate", author: ['Sue Rosen'], formation: ['Improper'], progression: ['Single'], a_1: "Start in short wavy lines, L by L in center \n (8) Balance, slide R \n (8) Balance, slide L", a_2: "(2) N allemande R 1/2 \n (2) G allemande L 1/2 \n (10) P swing", b_1: "(8) Circle L once \n (8) L chain", b_2: "(8) 1/2 hey \n (8) New N dosido"},
+    {title: "Ladies Night Out", author: ['Penn Fix'], formation: ['Improper'], progression: ['Single'], a_1: "4) N allemande L 1/2 \n (4) L corss, passing R \n (8) P swing", a_2: "(6) L down center \n (6) Turn alone and come back \n (4) L hand-cast with P", b_1: "(16) L pass R for full hey", b_2: "(4) L cross by R \n (12) N swing"},
+    {title: "Steel Anniversary Reel", author: ['Rick Mohr'], formation: ['Improper'], progression: ['Single'], a_1: "(8) LL forward and back \n (8) G roll L to R, mad robin", a_2: "(2) G cross L \n (4) P gypsy R melt into swing (8)", b_1: "(8) Circle L 3/4 \n (8) N allemande R 1 1/2", b_2: "(8) G lead 1/2 hey by L \n (8) N swing"}
 ]
 
 # Populate database with formations
