@@ -1,0 +1,20 @@
+.container
+  .row
+    .col-md-10
+      %h1{:style => "text-align: center"} Add an Author
+  .row
+    = form_for @author, :url => (@author.new_record? ? new_author_path(@author) : new_author_url(@author)) do |f|
+      - if @author.errors.any?
+        .alert.alert-danger
+          %h4 #{pluralize(@author.errors.count, "error")} prohibited this category from being saved:
+          %ul
+            - @author.errors.full_messages.each do |msg|
+              %li= msg
+      .col-md-6.form-group.form-section
+        %p
+          = f.label :name
+          = f.text_field :name,
+                         class: "form-control",
+                         required: true,
+                         placeholder: 'Author name'
+          = f.submit 'Save', class: "btn btn-success"

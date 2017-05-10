@@ -8,6 +8,7 @@ class AuthorController < ApplicationController
     end
     
     def new
+        @author = Author.new
     end
     
     def edit

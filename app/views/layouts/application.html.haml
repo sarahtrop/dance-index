@@ -26,30 +26,17 @@
       %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
       
   %body#container
-    %div#header{:background_color => "#FC0000"}
+    %div#header
       .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
         .container
-          .navbar-header
-            %button.navbar-toggle{:type => "button", "data-toggle" => "collapse", "data-target" => ".navbar-collapse"}
-              %span.sr-only Toggle Navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
+          .navbar-header{:background_color => "#FFFFFF"}
             %a.navbar-brand
               %span
                 %img{:src => "../assets/contra square.jpg", :height => "30px"} 
                 GC Contra Dance Index
-          .navbar-collapse.collapse
-            .navbar-right
-              %a.btn.btn-default.navbar-btn{:href => "/contra", :role => "button"}
-                %span.fa.fa-th
-                All Dances &raquo;
-              %a.btn.btn-default.navbar-btn{:href => "/formation", :role => "button"}
-                %span.fa.fa-th-large
-                Formations &raquo;
-              %a.btn.btn-default.navbar-btn{:href => "/progression", :role => "button"}
-                %span.fa.fa-arrows
-                Progressions &raquo;
+              %span 
+                = link_to "Add a Dance", action: :new
+                
                 
   #body.container
     / Enables flash messages on the home page, especially after submitting a resource form

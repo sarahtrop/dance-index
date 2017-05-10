@@ -1,11 +1,7 @@
-/ Original format: http://getbootstrap.com/css/#forms
-/ Translated from HTML to HAML with http://html2haml.herokuapp.com/
-/ This is the new contra dance form
-
 .container
     .row
         .col-md-10
-        %h1{:style => "text-align: center"} New Contra Form
+        %h1{:style => "text-align: center"} Add a Contra Dance
     -if @contra.errors.any?
         .row
             .alert.alert-danger.col-md-10
@@ -14,60 +10,60 @@
                 - @contra.errors.full_messages.each do |msg|
                     %li=     msg
     .row
-        = form_for @contra, :url => (@contra.new_record? ?contras_path : contra_url(@contra)) do |f|
-        
-            .form-section.col-md-10
+        = form_for @contra, :url => (@contra.new_record? ? new_contra_path(@contra) : new_contra_url(@contra)) do |f|
+            .form-section.col-md-12
                 .row.top-buffer
                     %form_group
                         .col-md-2
                             = f.label :title, "Title"
-                        .col-md-8
+                        .col-md-10
                             = f.text_field :title, :class => "form-control", :required => true, placeholder: 'Title of dance'
-                .row-top-buffer
+                .row.top-buffer
                     %form_group
                         .col-md-2
                             = f.label :author, "Author"
+                        .col-md-2
+                            = f.collection_select :author_id, Author.order(:name), :id, :name
                         .col-md-8
-                            = f.text_field :author, :class => "form-control", :required => true, placeholder: 'Author of dance'
-                .row-top-buffer
+                            %p Don't see the author you need? 
+                            = link_to "Add one!", new_author_path
+                            
                     %form_group
                         .col-md-2
                             = f.label :formation, "Formation"
-                        .col-md-8
-                            = f.collection_select :formation_id, Formation.order(:name), :id, :type
-                .row-top-buffer
+                        .col-md-10
+                            = f.collection_select :formation_id, Formation.order(:name), :id, :name
+                .row.top-buffer
                     %form_group
                         .col-md-2
                             = f.label :progression, "Progression"
-                        .col-md-8
-                            = f.collection_select :progression_id, Progression.order(:name), :id, :type
-                    
+                        .col-md-10
+                            = f.collection_select :progression_id, Progression.order(:name), :id, :name
+            .form-section.col-md-12
                 .row-top-buffer
-                    %p Must be of the format:
-                    %p (8) Ladies Chain
-                    %p (16) Partner Balance and Swing
                     %form_group
                         .col-md-2
-                            = f.label :a_1 "A 1"
-                        .col-md-8
-                            = f.text_field :a_1, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
-                    %form_group
-                        .col-md-2
-                            = f.label :a_2 "A 2"
-                        .col-md-8
-                            = f.text_field :a_2, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
+                            = f.label :a_1, "A1"
+                        .col-md-10
+                            = f.text_area :a_1, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
 
+                    %form_group
+                        .col-md-2
+                            = f.label :a_2, "A2"
+                        .col-md-10
+                            = f.text_area :a_2, :class => "form-control", :required => true, placeholder: '(16) Partner Balance and Swing'
+
+                    %form_group
+                        .col-md-2
+                            = f.label :b_1, "B1"
+                        .col-md-10
+                            = f.text_area :b_1, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
                 .row-top-buffer
                     %form_group
                         .col-md-2
-                            = f.label :b_1 "B 1"
-                        .col-md-8
-                            = f.text_field :b_1, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
-                    %form_group
-                        .col-md-2
-                            = f.label :b_2 "B 2"
-                        .col-md-8
-                            = f.text_field :b_2, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
+                            = f.label :b_2, "B2"
+                        .col-md-10
+                            = f.text_area :b_2, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
 
         .col-md-2
-            %button.btn.btn-success{:type => "create", :confirm => "confirm"} Create
+            %button.btn.btn-success{:type => "create", :confirm => "confirm"} Submit

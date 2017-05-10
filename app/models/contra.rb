@@ -6,6 +6,7 @@ class Contra < ActiveRecord::Base
     
     has_one :formation
     has_one :progression
+    has_one :author
     
     private
     def must_have_one_formation

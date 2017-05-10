@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :contra
   resources :formation
   resources :progression
+  resources :author
 end
