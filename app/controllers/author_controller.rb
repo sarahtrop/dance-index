@@ -4,7 +4,7 @@ class AuthorController < ApplicationController
     end 
     
     def show
-        @contras = Author.find_by(params[:id])
+        @contras = @author.contras
     end
     
     def new

@@ -4,7 +4,7 @@ class FormationController < ApplicationController
     end 
     
     def show
-        @contras = Formation.find_by(params[:id])
+        @contras = @formation.contras
     end
     
     def new
