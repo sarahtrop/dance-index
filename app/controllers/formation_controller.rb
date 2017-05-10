@@ -35,6 +35,6 @@ class FormationController < ApplicationController
     
     private
     def formation_params
-        params.require(:formation).permit(:name)
+        params.require(:formation).permit(:name, :contra_id)
     end
 end

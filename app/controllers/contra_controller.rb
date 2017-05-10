@@ -39,7 +39,6 @@ class ContraController < ApplicationController
     private
     def contra_params
         the_params = params.require(:contra)
-                            .permit(:title, :a_1, :a_2, :b_1, :b_2,
-                                    :formation_id, :progression_id, :author_id)
+                            .permit(:title, :a_1, :a_2, :b_1, :b_2)
     end
 end

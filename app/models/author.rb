@@ -1,3 +1,3 @@
 class Author < ActiveRecord::Base
-    belongs_to :contra
+    has_many :contras
 end

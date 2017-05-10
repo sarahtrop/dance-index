@@ -17,11 +17,3 @@ If you need to reset the database (for some reason), run:
     $ bundle exec rake db:reset
 
 This will reset the entire database, deleting what was there, restarting IDs and reseeding it with the data from seeds.rb.
-
-Finally, run the test suite to verify that everything is working correctly:
-
-    $ bundle exec rake test
-
-If the test suite passes, you'll be ready to run the app in a local server:
-
-    $ rails server -b $IP -p $PORT

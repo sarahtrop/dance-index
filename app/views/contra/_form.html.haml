@@ -23,7 +23,7 @@
                         .col-md-2
                             = f.label :author, "Author"
                         .col-md-2
-                            = f.collection_select :author_id, Author.order(:name), :id, :name
+                            = f.collection_select :author, Author.order(:name), :id, :name
                         .col-md-8
                             %p Don't see the author you need? 
                             = link_to "Add one!", new_author_path
@@ -32,13 +32,13 @@
                         .col-md-2
                             = f.label :formation, "Formation"
                         .col-md-10
-                            = f.collection_select :formation_id, Formation.order(:name), :id, :name
+                            = f.collection_select :formation, Formation.order(:name), :id, :name
                 .row.top-buffer
                     %form_group
                         .col-md-2
                             = f.label :progression, "Progression"
                         .col-md-10
-                            = f.collection_select :progression_id, Progression.order(:name), :id, :name
+                            = f.collection_select :progression, Progression.order(:name), :id, :name
             .form-section.col-md-12
                 .row-top-buffer
                     %form_group

@@ -3,13 +3,13 @@
         = link_to contra, class: "contra-title", target: "_blank" do
             = contra.title
     %h2
-        = link_to Author.find_by(contra.author_id), class: "author-title", target: "_blank" do
-            = "by " + Author.find_by(contra.author_id).name
+        = link_to contra[:author], class: "author-title", target: "_blank" do
+            = "by " + contra[:author].name
     %h3 
-        = link_to Formation.find_by(contra.formation_id), class: "formation-title" do
-            = Formation.find_by(contra.formation_id).name + ", "
-        = link_to Progression.find_by(contra.progression_id).name, class: "progression-title" do
-            = Progression.find_by(contra.progression_id).name + " progression"
+        = link_to contra[:formation], class: "formation-title" do
+            = contra[:formation].name + ", "
+        = link_to contra[:progression], class: "progression-title" do
+            = contra[:progression].name + " progression"
     %p{:class => "part_title"} A1:
     %p #{contra.a_1.gsub(/\n/, '<br />').html_safe}
     %p{:class => "part_title"} A2:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510212441) do
+ActiveRecord::Schema.define(version: 20170510212450) do
 
   create_table "authors", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,18 +20,17 @@ ActiveRecord::Schema.define(version: 20170510212441) do
     t.integer  "contra_id"
   end
 
+  add_index "authors", ["contra_id"], name: "index_authors_on_contra_id"
+
   create_table "contras", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "title"
     t.string   "notes"
     t.string   "a_1"
     t.string   "a_2"
     t.string   "b_1"
     t.string   "b_2"
-    t.integer  "formation_id"
-    t.integer  "progression_id"
-    t.integer  "author_id"
   end
 
   create_table "formations", force: :cascade do |t|
@@ -41,11 +40,15 @@ ActiveRecord::Schema.define(version: 20170510212441) do
     t.integer  "contra_id"
   end
 
+  add_index "formations", ["contra_id"], name: "index_formations_on_contra_id"
+
   create_table "progressions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
     t.integer  "contra_id"
   end
+
+  add_index "progressions", ["contra_id"], name: "index_progressions_on_contra_id"
 
 end

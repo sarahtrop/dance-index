@@ -29,7 +29,9 @@ authors = [
     {name: "Gene Hubert"},
     {name: "David Smukler"},
     {name: "Bob Isaacs"},
-    {name: "Jem Gregory"}
+    {name: "Jem Gregory"},
+    {name: "Bill Pope"},
+    {name: "Al Olsen"}
     
 ]
 
@@ -72,16 +74,13 @@ end
 # Populate database with dances
 contra_dances.each do |c|
     # links progression to contradance
-   prog_title = c[:progression]
-   c[:progression] = Progression.find_by(name: prog_title)
+   c[:progression] = Progression.find_by(name: c[:progression])
    
    # links formation to contradance
-   form_title = c[:formation]
-   c[:formation] = Formation.find_by(name: form_title)
+   c[:formation] = Formation.find_by(name: c[:formation])
    
    # links author to contradance
-   author_title = c[:author]
-   c[:author] = Author.find_by(name: author_title)
+   c[:author] = Author.find_by(name: c[:author])
    
    Contra.create! (c)
 end
