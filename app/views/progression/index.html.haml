@@ -1,18 +1,15 @@
-.jumbotron#main-page-jumbotron
-    .container
-        %h1 Progressions
-    .container{:id => "contra-by-formation"}
-        .row
-            %h1 Listing progressions
-            .row
-                %table.table.table-striped
-                    %thead
-                        %tr
-                            %th Progression Type
-                            %th
+.container{:id => "all-contras"}
+    %h1{:class => "main-title"} Progressions
+.container
+    .row
+        %table.table
+            %thead
+                %tr
+                    %th 
+                    %th
 
-                        %tbody
-                            - @progressions.each do |progression|
-                                %tr
-                                    %td= progression.name
-                                    %td= link_to 'View', progression
+                %tbody
+                    - @progressions.each do |progression|
+                        %tr
+                            %td= progression.name
+                            %td= link_to 'View', progression

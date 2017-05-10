@@ -2,8 +2,7 @@
   .row
     .col-md-12
       %h1{:style => "text-align:center"} #{@formation.name} Dances
-- if !@contras.empty?
-  .container{:id => "all-contras"}
-    - @contras.each do |contra|
-      = render :partial => 'contra/contra', :locals => { :contra => contra }
-  %hr
+.container{:id => "all-contras"}
+  - @contras.each do |contra|
+    = render :partial => 'contra/contra', :locals => { :contra => contra }
+%hr

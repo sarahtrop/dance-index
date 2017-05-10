@@ -1,16 +1,6 @@
-.jumbotron#main-page-jumbotron
-    .container
-        %h1 All Dances
-    .container
-        %p Sort by formation:
-        %p 
-            - Formation.all.each do |formation|
-                = link_to "-" + formation.name + "-"
-        %p Sort by progression:
-        %p 
-            - Progression.all.each do |progression|
-                = link_to "-" + progression.name + "-"
-    .container{:id => "all-contras"}
-        - @contras.each do |contra|
-            = render :partial => 'contra', :locals => { :contra => contra }
-    %hr
+.container{:id => "all-contras"}
+    %h1{:class => "main-title"} All Dances
+.container
+    - @contras.each do |contra|
+        = render :partial => 'contra', :locals => { :contra => contra }
+%hr

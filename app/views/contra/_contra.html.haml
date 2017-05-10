@@ -3,21 +3,17 @@
         = link_to contra, class: "contra-title", target: "_blank" do
             = contra.title
     %h2
-        = link_to contra[:author], class: "author-title", target: "_blank" do
-            = "by " + contra[:author].name
+        = link_to Author.find_by(id: contra[:author_id]), class: "author-title", target: "_blank" do
+            = "by " + Author.find_by(id: contra[:author_id]).name
     %h3 
-        = link_to contra[:formation], class: "formation-title" do
-            = contra[:formation].name + ", "
-        = link_to contra[:progression], class: "progression-title" do
-            = contra[:progression].name + " progression"
-    %p{:class => "part_title"} A1:
-    %p #{contra.a_1.gsub(/\n/, '<br />').html_safe}
-    %p{:class => "part_title"} A2:
-    %p #{contra.a_2.gsub(/\n/, '<br />').html_safe}
-    %p{:class => "part_title"} B1:
-    %p #{contra.b_1.gsub(/\n/, '<br />').html_safe}
-    %p{:class => "part_title"} B2:
-    %p #{contra.b_2.gsub(/\n/, '<br />').html_safe}
+        = link_to Formation.find_by(id: contra[:formation_id]), class: "fp-title" do
+            = Formation.find_by(id: contra[:formation_id]).name + ", "
+        = link_to Progression.find_by(id: contra[:progression_id]), class: "fp-title" do
+            = Progression.find_by(id: contra[:progression_id]).name + " progression"
+    %p A1: #{contra.a_1.gsub(/\n/, '<br />').html_safe}
+    %p A2: #{contra.a_2.gsub(/\n/, '<br />').html_safe}
+    %p B1: #{contra.b_1.gsub(/\n/, '<br />').html_safe}
+    %p B2: #{contra.b_2.gsub(/\n/, '<br />').html_safe}
     - if contra.notes != nil
-        %p{:class => "part-title"} Notes: 
+        %p{:class => "part_title"} Notes: 
         %p #{contra.notes}

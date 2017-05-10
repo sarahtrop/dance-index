@@ -43,27 +43,50 @@ a:visited {
 }
 
 .contra-block {
-  background-color:#FFFFFF;
   margin: 25px;
   padding: 0px 10px;
   @include shadow-round(12px);
-
+  
+  p {
+    font-size: 12pt;
+  }
+  
   .contra-title {
+    color: #995FA3;
+    font-size: 18pt;
+  }
+  
+  .fp-title {
+    font-size: 14pt;
+    color: black;
+  }
+  
+  .author-title {
+    font-size: 14pt;
     color: black;
   }
 }
-/*
+
+.sort-title {
+  font-size: 14pt;
+}
+
+.main-title {
+  font-size: 20pt;
+  color: #912222;
+}
+
 #all-contras {
-  background-color:#DCDCDC;
-  @include shadow-round(8px);
-}*/
+  background-color:#FFFFFF;
+  //@include shadow-round(8px);
+}
 
 .list-group {
   list-style-type: none;
 }
 
 .panel_style {
-  background-color:#2ecc71;
+  background-color:#FFFFFF;
 }
 
 // Make the entire width of panel title
@@ -127,7 +150,7 @@ footer {
 #main-page-jumbotron {
   background-image: url(../images/color.jpg);
   background-position: 0% 45%;
-  background-size: cover;
+ // background-size: cover;
   background-repeat: no-repeat;
   color: black;
   min-height: 200px;

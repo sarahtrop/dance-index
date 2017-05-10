@@ -1,18 +1,15 @@
-.jumbotron#main-page-jumbotron
-    .container
-        %h1 Authors
-    .container{:id => "contra-by-formation"}
-        .row
-            %h1 Listing authors
-            .row
-                %table.table.table-striped
-                    %thead
-                        %tr
-                            %th Author
-                            %th
-
-                        %tbody
-                            - @authors.each do |author|
-                                %tr
-                                    %td= author.name
-                                    %td= link_to 'View', author
+.container{:id => "all-contras"}
+    %h1{:class => "main-title"} Authors
+.container
+    .row
+        %table.table
+            %thead
+                %tr
+                    %th 
+                    %th
+    
+                %tbody
+                    - @authors.each do |author|
+                        %tr                         
+                            %td= author.name
+                            %td= link_to 'View', author

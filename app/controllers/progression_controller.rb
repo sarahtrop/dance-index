@@ -4,7 +4,8 @@ class ProgressionController < ApplicationController
     end 
     
     def show
-        @contras = @progressions.contras
+        @progression = Progression.find_by(id: params[:id])
+        @contras = Contra.where(progression_id: params[:id])
     end
     
     def new

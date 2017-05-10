@@ -4,7 +4,8 @@ class AuthorController < ApplicationController
     end 
     
     def show
-        @contras = @author.contras
+        @author = Author.find_by(id: params[:id])
+        @contras = Contra.where(author_id: params[:id])
     end
     
     def new

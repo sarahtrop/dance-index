@@ -1,18 +1,15 @@
-.jumbotron#main-page-jumbotron
-    .container
-        %h1 Formations
-    .container{:id => "contra-by-formation"}
-        .row
-            %h1 Listing formations
-            .row
-                %table.table.table-striped
-                    %thead
-                        %tr
-                            %th Formation Type
-                            %th
+.container{:id => "all-contras"}
+    %h1{:class => "main-title"} Formations
+.container
+    .row
+        %table.table
+            %thead
+                %tr
+                    %th 
+                    %th
 
-                        %tbody
-                            - @formations.each do |formation|
-                                %tr
-                                    %td= formation.name
-                                    %td= link_to 'View', formation
+                %tbody
+                    - @formations.each do |formation|
+                        %tr
+                            %td= formation.name
+                            %td= link_to 'View', formation
