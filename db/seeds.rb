@@ -125,6 +125,10 @@ contra_dances = [
     {title: "The Baby Rose", author: ['David Kaynor'], formation: ['Improper'], progression: ['Single'], a_1: "(16) N balance and swing", a_2: "(8) Circle L 3/4 \n (8) P dosido", b_1: "(16) P balance and swing", b_2: "(8) L chain \n (8) Star L"},
 ]
 
+contra_user = [{email: "grinnellcontra@gmail.com", password: "gccontra"}]
+
+User.create! (contra_user)
+
 # Populate database with formations
 formations.each do |f|
     Formation.create! (f)

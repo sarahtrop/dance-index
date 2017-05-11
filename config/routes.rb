@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     put :favorite, on: :member # Allow resources to be favorited by users
   end
 
+  devise_for :users
   resources :formation
   resources :progression
   resources :author
-  resources :users, :only => [:index, :show]
 end

@@ -49,11 +49,11 @@ group :production do
   gem 'pg', '0.18.4'
 end
 
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'autoprefixer-rails'
 gem "haml"
 gem "haml-rails"
-gem 'font-awesome-sass', '~> 4.4.0'
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'devise_invitable'
