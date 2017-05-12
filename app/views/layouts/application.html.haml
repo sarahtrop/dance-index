@@ -54,11 +54,11 @@
                 = link_to destroy_user_session_path, :method => :delete, :id => "log-out-link" do
                   Log Out
                   %span.fa.fa-sign-out
-              %a.btn.btn-default.navbar-btn{:href => "/contra/new", :role => "button", :color => "#912222"}
-                %span
-                Add a Dance &raquo;
+              - if user_signed_in?
+                %a.btn.btn-default.navbar-btn{:href => '/users/dance_list', :role => "button"}
+                  My Dance List &raquo;
               %span.dropdown
-                %button.btn.btn-default.dropdown-toggle{:data_toggle => "dropdown", :type => "button"}
+                %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
                   Sort by...
                   %span.caret
                   %ul.dropdown-menu
@@ -68,6 +68,9 @@
                       %a{:href => "/formations"} Formation
                     %li
                       %a{:href => "/progressions"} Progression
+              %a.btn.btn-default.navbar-btn{:href => "/contra/new", :role => "button", :color => "#912222"}
+                %span
+                Add a Dance &raquo;
                 
                 
   #body.container

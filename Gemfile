@@ -57,3 +57,5 @@ gem "haml-rails"
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'devise_invitable'
+gem 'bootstrap-sass-extras'
+gem 'jquery-turbolinks'

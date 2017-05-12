@@ -23,13 +23,9 @@
             .col-md-3
                 %br
                 %br
-                = button_to(favorite_contra_path(contra.id, type: "favorite"),
-                        :class => 'btn btn-default noprint',
-                        :method => 'put') do
+                = button_to(favorite_contra_path(contra.id, type: "favorite"), :class => 'btn btn-default noprint', :method => 'put') do
                     %span.fa.fa-lg.fa-plus
                     Add to List
-                = button_to(favorite_contra_path(contra.id, type: "unfavorite"), 
-                        :class => 'btn btn-default noprint', 
-                        :method => 'put') do
+                = button_to(favorite_contra_path(contra.id, type: "unfavorite"), :class => 'btn btn-default noprint', :method => 'put') do
                     %span.fa.fa-lg.fa-times
                     Remove from List
