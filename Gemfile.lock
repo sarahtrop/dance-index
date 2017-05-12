@@ -114,6 +114,7 @@ GEM
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    puma (3.8.2)
     rack (1.6.6)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -153,6 +154,7 @@ GEM
       railties (>= 4.2.0, < 5.3)
     ruby_parser (3.9.0)
       sexp_processor (~> 4.1)
+    rvm (1.11.3.9)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -212,8 +214,10 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   pg (= 0.18.4)
+  puma
   rails (= 4.2.5)
   rails_12factor
+  rvm
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
