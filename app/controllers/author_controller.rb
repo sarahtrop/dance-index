@@ -12,6 +12,9 @@ class AuthorController < ApplicationController
         @author = Author.new
     end
     
+    def update
+    end
+    
     def edit
     end
     

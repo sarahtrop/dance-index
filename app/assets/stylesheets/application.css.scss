@@ -47,10 +47,6 @@ a:visited {
   padding: 0px 10px;
   @include shadow-round(12px);
   
-  p {
-    font-size: 12pt;
-  }
-  
   .contra-title {
     color: #995FA3;
     font-size: 18pt;
@@ -72,8 +68,9 @@ a:visited {
 }
 
 .main-title {
-  font-size: 20pt;
+  font-size: 24pt;
   color: #912222;
+  text-align: center;
 }
 
 #all-contras {
@@ -183,5 +180,12 @@ footer {
   a:link:after, a:visited:after {  
     display: none;
     content: "";    
+  }
+}
+
+.contra-table {
+  th, td {
+    border: none;
+    font-size: 12pt;
   }
 }

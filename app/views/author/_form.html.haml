@@ -17,4 +17,5 @@
                          class: "form-control",
                          required: true,
                          placeholder: 'Author name'
-        %button.btn.btn-success{:type => "create", :confirm => "confirm"} Submit
+        %span
+          = f.submit "Submit", class:'btn btn-primary'

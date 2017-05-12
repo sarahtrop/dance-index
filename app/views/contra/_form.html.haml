@@ -10,7 +10,7 @@
                 - @contra.errors.full_messages.each do |msg|
                     %li=     msg
     .row
-        = form_for @contra, :url => (@contra.new_record? ? new_contra_path(@contra) : new_contra_url(@contra)) do |f|
+        = form_for @contra, url: {action: "create"} do |f|
             .form-section.col-md-12
                 .row.top-buffer
                     %form_group
@@ -21,24 +21,23 @@
                 .row.top-buffer
                     %form_group
                         .col-md-2
-                            = f.label :author, "Author"
+                            = f.label :author_id, "Author"
                         .col-md-2
-                            = f.collection_select :author, Author.order(:name), :id, :name
+                            = f.collection_select :author_id, Author.order(:name), :id, :name, prompt: true
                         .col-md-8
                             %p Don't see the author you need? 
                             = link_to "Add one!", new_author_path
-                            
                     %form_group
                         .col-md-2
-                            = f.label :formation, "Formation"
+                            = f.label :formation_id, "Formation"
                         .col-md-10
-                            = f.collection_select :formation, Formation.order(:name), :id, :name
+                            = f.collection_select :formation_id, Formation.all, :id, :name, prompt: true
                 .row.top-buffer
                     %form_group
                         .col-md-2
-                            = f.label :progression, "Progression"
+                            = f.label :progression_id, "Progression"
                         .col-md-10
-                            = f.collection_select :progression, Progression.order(:name), :id, :name
+                            = f.collection_select :progression_id, Progression.all, :id, :name, prompt: true
             .form-section.col-md-12
                 .row-top-buffer
                     %form_group
@@ -64,6 +63,6 @@
                             = f.label :b_2, "B2"
                         .col-md-10
                             = f.text_area :b_2, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
-
-        .col-md-2
-            %button.btn.btn-success{:type => "create", :confirm => "confirm"} Submit
+                %span
+                    %form_group
+                        = f.submit "Submit", class:'btn btn-primary'

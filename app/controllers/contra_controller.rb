@@ -14,13 +14,15 @@ class ContraController < ApplicationController
         @contra = Contra.new
     end
     
+    def update
+    end
+    
     def edit
     end
     
     # Creates a new contra dance
     def create
         @contra = Contra.new(contra_params)
-        puts contra_params
         
         if @contra.save
             flash[:success] = "#{@contra.title} was sucessfully saved"
