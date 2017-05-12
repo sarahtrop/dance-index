@@ -166,6 +166,10 @@ contra_dances = [
     {title: "Steel Anniversary Reel", author: ['Rick Mohr'], formation: ['Improper'], progression: ['Single'], a_1: "(8) LL forward and back \n (8) G roll L to R, mad robin", a_2: "(2) G cross L \n (4) P gypsy R melt into swing (8)", b_1: "(8) Circle L 3/4 \n (8) N allemande R 1 1/2", b_2: "(8) G lead 1/2 hey by L \n (8) N swing"}
 ]
 
+contra_user = [{email: "grinnellcontra@gmail.com", password: "gccontra"}]
+
+User.create! (contra_user)
+
 # Populate database with formations
 formations.each do |f|
     Formation.create! (f)

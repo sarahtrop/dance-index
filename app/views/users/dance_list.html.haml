@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-12
+      %h1{:style => "text-align:center"} My Dance List
+- if current_user.favorites.empty?
+  %p You have no dances saved in your list.
+- if !current_user.favorites.empty?
+  .container{:id => "all-contras"}
+    - current_user.favorites.each do |contra|
+      = render :partial => 'contra/contra', :locals => { :contra => contra }
+  %hr

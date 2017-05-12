@@ -1,19 +1,31 @@
 .row.contra-block
-    %h1
-        = link_to contra, class: "contra-title", target: "_blank" do
-            = contra.title
-    %h2
-        = link_to Author.find_by(id: contra[:author_id]), class: "author-title", target: "_blank" do
-            = "by " + Author.find_by(id: contra[:author_id]).name
-    %h3 
-        = link_to Formation.find_by(id: contra[:formation_id]), class: "fp-title" do
-            = Formation.find_by(id: contra[:formation_id]).name + ", "
-        = link_to Progression.find_by(id: contra[:progression_id]), class: "fp-title" do
-            = Progression.find_by(id: contra[:progression_id]).name + " progression"
-    %p A1: #{contra.a_1.gsub(/\n/, '<br />').html_safe}
-    %p A2: #{contra.a_2.gsub(/\n/, '<br />').html_safe}
-    %p B1: #{contra.b_1.gsub(/\n/, '<br />').html_safe}
-    %p B2: #{contra.b_2.gsub(/\n/, '<br />').html_safe}
-    - if contra.notes != nil
-        %p{:class => "part_title"} Notes: 
-        %p #{contra.notes}
+    .col-md-9
+        %h1
+            = link_to contra, class: "contra-title", target: "_blank" do
+                = contra.title
+        %h2
+            = link_to Author.find_by(id: contra[:author_id]), class: "author-title", target: "_blank" do
+                = "by " + Author.find_by(id: contra[:author_id]).name
+        %h3 
+            = link_to Formation.find_by(id: contra[:formation_id]), class: "fp-title" do
+                = Formation.find_by(id: contra[:formation_id]).name + ", "
+            = link_to Progression.find_by(id: contra[:progression_id]), class: "fp-title" do
+                = Progression.find_by(id: contra[:progression_id]).name + " progression"
+        %p A1: #{contra.a_1.gsub(/\n/, '<br />').html_safe}
+        %p A2: #{contra.a_2.gsub(/\n/, '<br />').html_safe}
+        %p B1: #{contra.b_1.gsub(/\n/, '<br />').html_safe}
+        %p B2: #{contra.b_2.gsub(/\n/, '<br />').html_safe}
+        - if contra.notes != nil
+            %p{:class => "part_title"} Notes: 
+            %p #{contra.notes}
+    .col-md-1
+        - if current_user
+            .col-md-3
+                %br
+                %br
+                = button_to(favorite_contra_path(contra.id, type: "favorite"), :class => 'btn btn-default noprint', :method => 'put') do
+                    %span.fa.fa-lg.fa-plus
+                    Add to List
+                = button_to(favorite_contra_path(contra.id, type: "unfavorite"), :class => 'btn btn-default noprint', :method => 'put') do
+                    %span.fa.fa-lg.fa-times
+                    Remove from List

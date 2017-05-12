@@ -18,15 +18,19 @@
 
     / Custom Styles for this template
     %link{:href => "css/jumbotron.css", :rel => :stylesheet}/
+    %link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"}
 
     / HTML5 Shim and Respond.js IE8 Support of HTML5 elements and media queries.
     / WARNING: Respond.js doesn't work if you view the page using file://
     /[if IE9]
+      %script{:src => "jquery/jquery.js"}
+      %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+      %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
       %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
       %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
       
   %body#container
-    %div#header{:background_color => "#FFFFFF"}
+    %div#header
       .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
         .container
           .navbar-header
@@ -39,17 +43,34 @@
               %span
                 %img{:src => "../assets/color.jpg", :height => "30px"} 
                 GC Contra Dance Index
-          .navbar-collapse.collapse
+          .navbar-collapse.collapse{:background_color => "#FFFFFF"}
             .navbar-right
-              %a.btn.btn-default.navbar-btn{:href => "/author", :role => "button", :color => "#912222"}
+              %span.navbar-text= current_user.email if user_signed_in?
+              - if !user_signed_in?
+                %a.btn.btn-default.navbar-btn{:href => "/users/sign_in", :role => "button"}
+                  %span.fa.fa-user
+                  User &raquo;
+              - if user_signed_in?
+                = link_to destroy_user_session_path, :method => :delete, :id => "log-out-link" do
+                  Log Out
+                  %span.fa.fa-sign-out
+              - if user_signed_in?
+                %a.btn.btn-default.navbar-btn{:href => '/users/dance_list', :role => "button"}
+                  My Dance List &raquo;
+              %span.dropdown
+                %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+                  Sort by...
+                  %span.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "/authors"} Author
+                    %li
+                      %a{:href => "/formations"} Formation
+                    %li
+                      %a{:href => "/progressions"} Progression
+              %a.btn.btn-default.navbar-btn{:href => "/contra/new", :role => "button", :color => "#912222"}
                 %span
-                Sort By Authors &raquo;
-              %a.btn.btn-default.navbar-btn{:href => "/formation", :role => "button", :color => "#912222"}
-                %span
-                Sort By Formation &raquo;
-              %a.btn.btn-default.navbar-btn{:href => "/progression", :role => "button", :color => "#912222"}
-                %span
-                Sort By Progression &raquo;
+                Add a Dance &raquo;
                 
                 
   #body.container
