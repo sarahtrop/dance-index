@@ -24,8 +24,6 @@
     / WARNING: Respond.js doesn't work if you view the page using file://
     /[if IE9]
       %script{:src => "jquery/jquery.js"}
-      %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
-      %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
       %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
       %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.42/respond.min.js"}
       
@@ -53,7 +51,7 @@
                 %a.btn.btn-default.navbar-btn{:href => '/users/dance_list', :role => "button"}
                   My Dance List &raquo;
               %span.dropdown
-                %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+                %a.btn.btn-default.dropdown-toggle{:data-toggle => "dropdown"}
                   Sort by...
                   %span.caret
                   %ul.dropdown-menu
