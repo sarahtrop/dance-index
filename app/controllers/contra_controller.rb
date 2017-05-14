@@ -1,7 +1,11 @@
 class ContraController < ApplicationController
     # Display all contras
     def index
-        @contras = Contra.all
+        if params[:tag]
+            @contras = Contra.tagged_wih(params[:tag])
+        else
+            @contras = Contra.all
+        end
     end
     
     # Display an individual dance
@@ -62,6 +66,6 @@ class ContraController < ApplicationController
     private
     def contra_params
         the_params = params.require(:contra)
-                            .permit(:title, :a_1, :a_2, :b_1, :b_2)
+                            .permit(:title, :a_1, :a_2, :b_1, :b_2, :tag_list => [])
     end
 end

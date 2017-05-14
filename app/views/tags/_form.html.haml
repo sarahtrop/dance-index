@@ -1,0 +1,21 @@
+.container
+  .row
+    .col-md-10
+      %h1{:style => "text-align: center"} Add a Figure
+  .row
+    = form_for @tag, :url => (@tag.new_record? ? new_tag_path(@tag) : new_tag_url(@tag)) do |f|
+      - if @tag.errors.any?
+        .alert.alert-danger
+          %h4 #{pluralize(@tag.errors.count, "error")} prohibited this figure from being saved:
+          %ul
+            - @tag.errors.full_messages.each do |msg|
+              %li= msg
+      .col-md-6.form-group.form-section
+        %p
+          = f.label :name
+          = f.text_field :name,
+                         class: "form-control",
+                         required: true,
+                         placeholder: 'Figure'
+        %span
+          = f.submit "Submit", class:'btn btn-primary'

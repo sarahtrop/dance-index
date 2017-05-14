@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -57,8 +56,6 @@ gem "haml"
 gem "haml-rails"
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'devise_invitable'
 gem 'bootstrap-sass-extras'
 gem 'jquery-turbolinks'
-gem 'puma'
-gem 'rvm'
+gem 'acts-as-taggable-on', '~> 4.0'

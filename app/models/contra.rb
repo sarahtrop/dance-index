@@ -5,4 +5,6 @@ class Contra < ActiveRecord::Base
     belongs_to :formation
     belongs_to :progression
     belongs_to :author
+    
+    acts_as_taggable_on :tags
 end

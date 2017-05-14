@@ -1,0 +1,15 @@
+.container{:id => "all-contras"}
+    %h1{:class => "main-title"} Figures
+.container
+    .row
+        %table.table
+            %thead
+                %tr
+                    %th 
+                    %th
+    
+                %tbody
+                    - @tags.each do |tag|
+                        %tr                         
+                            %td= tag.name
+                            %td= link_to 'View', tag_path(tag)

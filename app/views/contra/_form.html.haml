@@ -5,7 +5,7 @@
     -if @contra.errors.any?
         .row
             .alert.alert-danger.col-md-10
-                %h4 #{pluralize(@contra.errors.count, "error")} prohibited this category from being saved:
+                %h4 #{pluralize(@contra.errors.count, "error")} prohibited this dance from being saved:
                 %ul
                 - @contra.errors.full_messages.each do |msg|
                     %li=     msg
@@ -63,6 +63,16 @@
                             = f.label :b_2, "B2"
                         .col-md-10
                             = f.text_area :b_2, :class => "form-control", :required => true, placeholder: '(16) Neighbor Balance and Swing'
+            .form-section.col-md-12
+                .row.top-buffer
+                    %form-group
+                        .col-md-2
+                            = f.label :tag_list, "Figures - check any and all boxes that apply"
+                        .col-md-8{:padding => "5px"}
+                            = f.collection_check_boxes :tag_list, ActsAsTaggableOn::Tag.all, :name, :name, :item_wrapper_class => "checkbox_container"
+                        .col-md-2
+                            %p Don't see the figure you need? 
+                            = link_to "Add one!", new_tag_path
                 %span
                     %form_group
                         = f.submit "Submit", class:'btn btn-primary'
