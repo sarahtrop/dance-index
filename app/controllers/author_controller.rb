@@ -23,8 +23,8 @@ class AuthorController < ApplicationController
 
         respond_to do |format|
             if @author.save
-                format.html { redirect_to @author, notice: 'author was successfully created.' }
-                format.json { render :show, status: :created, location: @author }
+                format.html { redirect_to @author, notice: "#{author.name} was successfully created." }
+                format.json { render :index, status: :created, location: @author }
             else
                 format.html { render :new }
                 format.json { render json: @author.errors, status: :unprocessable_entity }

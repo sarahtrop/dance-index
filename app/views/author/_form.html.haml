@@ -3,7 +3,7 @@
     .col-md-10
       %h1{:style => "text-align: center"} Add an Author
   .row
-    = form_for @author, :url => (@author.new_record? ? new_author_path(@author) : new_author_url(@author)) do |f|
+    = form_for @author, url: {action: "create"} do |f|
       - if @author.errors.any?
         .alert.alert-danger
           %h4 #{pluralize(@author.errors.count, "error")} prohibited this author from being saved:

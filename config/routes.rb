@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   
   resources :formation
   resources :progression
-  resources :author
+  
+  resources :author do
+    post :new
+  end
+
   resources :tags
 end

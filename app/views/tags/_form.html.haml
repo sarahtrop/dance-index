@@ -3,7 +3,7 @@
     .col-md-10
       %h1{:style => "text-align: center"} Add a Figure
   .row
-    = form_for @tag, :url => (@tag.new_record? ? new_tag_path(@tag) : new_tag_url(@tag)) do |f|
+    = form_for @tag, url: {action: "create"} do |f|
       - if @tag.errors.any?
         .alert.alert-danger
           %h4 #{pluralize(@tag.errors.count, "error")} prohibited this figure from being saved:
