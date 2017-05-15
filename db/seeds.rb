@@ -23,7 +23,9 @@ progressions = [
 
 figures = ["petronella", "hey", "gypsy", "revolving door", "down the hall",
             "butterfly whirl", "contra corners", "star through", "pass through",
-            "wave", "cali twirl"]
+            "wave", "cali twirl", "dosido", "promenade", "roll away", "figure eight", 
+            "cross trail", "raise/duck", "see saw", "basket", "mad robin", "swinging star",
+            "clover-leaf", "chain", "box the gnat", "swat the flea"]
 
 authors = [
     {name: "Cary Ravitz"},
