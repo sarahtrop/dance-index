@@ -50,19 +50,6 @@
               - if user_signed_in?
                 %a.btn.btn-default.navbar-btn{:href => '/users/dance_list', :role => "button"}
                   My Dance List &raquo;
-              %span.dropdown
-                %a.btn.btn-default.navbar-btn.dropdown-toggle{:data_toggle => "dropdown", :role => "button"}
-                  Sort by...
-                  %span.caret
-                %ul.dropdown-menu
-                  %li
-                    %a{:href => "/author"} Author
-                  %li
-                    %a{:href => "/formation"} Formation
-                  %li
-                    %a{:href => "/progression"} Progression
-                  %li
-                    %a{:href => "/tags"} Figure
               %a.btn.btn-default.navbar-btn{:href => "/contra/new", :role => "button", :color => "#912222"}
                 Add a Dance &raquo;
                 

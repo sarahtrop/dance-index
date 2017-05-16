@@ -1,5 +1,14 @@
 .container{:id => "all-contras"}
     %h1{:class => "main-title"} All Dances
+    %h3 Sort dances by...
+    %a.btn.btn-default{:href => '/author', :role => "button"}
+        Author &raquo;
+    %a.btn.btn-default{:href => '/formation', :role => "button"}
+        Formation &raquo;
+    %a.btn.btn-default{:href => '/progression', :role => "button"}
+        Progression &raquo;
+    %a.btn.btn-default{:href => '/tags', :role => "button"}
+        Figure &raquo;
 .container
     - @contras.each do |contra|
         = render :partial => 'contra', :locals => { :contra => contra }

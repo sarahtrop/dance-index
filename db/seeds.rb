@@ -21,11 +21,32 @@ progressions = [
     {name: "Quadruple"}
 ]
 
-figures = ["petronella", "hey", "gypsy", "revolving door", "down the hall",
-            "butterfly whirl", "contra corners", "star through", "pass through",
-            "wave", "cali twirl", "dosido", "promenade", "roll away", "figure eight", 
-            "cross trail", "raise/duck", "see saw", "basket", "mad robin", "swinging star",
-            "clover-leaf", "chain", "box the gnat", "swat the flea"]
+figures = [
+    {name: "petronella"}, 
+    {name: "hey"}, 
+    {name: "gypsy"}, 
+    {name: "revolving door"}, 
+    {name: "down the hall"},
+    {name: "butterfly whirl"}, 
+    {name: "contra corners"}, 
+    {name: "star through"}, 
+    {name: "pass through"},
+    {name: "wave"}, 
+    {name: "cali twirl"}, 
+    {name: "dosido"}, 
+    {name: "promenade"}, 
+    {name: "roll away"}, 
+    {name: "figure eight"}, 
+    {name: "cross trail"}, 
+    {name: "see saw"}, 
+    {name: "basket"}, 
+    {name: "mad robin"}, 
+    {name: "swinging star"},
+    {name: "clover-leaf"}, 
+    {name: "chain"}, 
+    {name: "box the gnat"}, 
+    {name: "swat the flea"}
+]
 
 authors = [
     {name: "Cary Ravitz"},
@@ -190,6 +211,10 @@ authors.each do |a|
     Author.create! (a)
 end
 
+figures.each do |f|
+    ActsAsTaggableOn::Tag.create!(f)
+end 
+
 # Populate database with dances
 contra_dances.each do |c|
     # links progression to contradance
@@ -201,7 +226,8 @@ contra_dances.each do |c|
    c[:author] = Author.find_by(name: c[:author])
    
    # Add tags
-   figures.each do |f|
+   ActsAsTaggableOn::Tag.all.each do |tag|
+       f = tag.name
       if c[:a_1].include?(f) && !c[:tag_list].include?(f)
           c[:tag_list].concat(f).concat(', ')
       end
